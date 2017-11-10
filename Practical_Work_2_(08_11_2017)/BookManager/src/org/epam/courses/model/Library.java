@@ -65,6 +65,13 @@ public class Library {
         return (booksCount == librarySize);
     }
 
+    public void putRandomBooksToLibrary(){
+        RandomBookBuilder randomBookBuilder = new RandomBookBuilder();
+        while(!isFull()){
+            addBook(randomBookBuilder.buildRandomBook());
+        }
+    }
+
     public void display(){
         for (Book book: allBooks) {
             System.out.println(book);

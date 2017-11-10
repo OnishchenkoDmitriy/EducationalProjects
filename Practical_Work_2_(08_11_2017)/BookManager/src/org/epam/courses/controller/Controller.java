@@ -2,7 +2,6 @@ package org.epam.courses.controller;
 
 import org.epam.courses.model.BookNames;
 import org.epam.courses.model.Library;
-import org.epam.courses.model.RandomBookBuilder;
 import org.epam.courses.view.View;
 
 public class Controller {
@@ -11,7 +10,6 @@ public class Controller {
     private Library library;
     private UserMenu userMenu;
 
-
     public Controller() {
         view = new View();
         library = new Library(BookNames.values().length);
@@ -19,14 +17,8 @@ public class Controller {
     }
 
     public void processUser() {
-        putRandomBooksToLibrary(library);
+        library.putRandomBooksToLibrary();
         userMenu.RunUserMenu();
     }
 
-    private void putRandomBooksToLibrary(Library library){
-        RandomBookBuilder randomBookBuilder = new RandomBookBuilder();
-        while(!library.isFull()){
-            library.addBook(randomBookBuilder.buildRandomBook());
-        }
-    }
 }
