@@ -2,7 +2,7 @@ package org.epam.courses.model;
 
 public enum PublishingHouses {
 
-    PUBL_HOUSE_1("RELX Group"),
+    PUBL_HOUSE_1("RELXGroup"),
     PUBL_HOUSE_2("Woongjin ThinkBig"),
     PUBL_HOUSE_3("Saraiva"),
     PUBL_HOUSE_4("OLMA Media Group"),

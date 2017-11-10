@@ -34,7 +34,7 @@ public class Library {
         Book[] booksByAuthor = new Book[booksCount];
         int index = 0;
         for (Book book:allBooks) {
-            if(book.getAuthor().contains(author)){
+            if(book.getAuthor().compareTo(author) == 0){
                 booksByAuthor[index++] = book;
             }
         }
@@ -45,7 +45,7 @@ public class Library {
         Book[] booksByPublisher = new Book[booksCount];
         int index = 0;
         for (Book book:allBooks) {
-            if(book.getPublishingHouse().contains(publisher)){
+            if(book.getPublishingHouse().compareTo(publisher) == 0){
                 booksByPublisher[index++] = book;
             }
         }

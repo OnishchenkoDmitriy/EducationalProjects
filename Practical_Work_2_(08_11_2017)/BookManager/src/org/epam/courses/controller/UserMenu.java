@@ -17,7 +17,7 @@ public class UserMenu {
         this.library = library;
     }
 
-    public void RunUserMenu(){
+    public void runUserMenu(){
         Scanner scanner = new Scanner(System.in);
         boolean isExit = false;
         view.printMessage(TextConstants.WELCOME);
@@ -80,13 +80,14 @@ public class UserMenu {
         view.printMessage(TextConstants.PARAMETER_FOR_FIND);
         switch (scanner.next()) {
             case "1":
+                scanner.nextLine();
                 view.printMessage(TextConstants.ENTER_AUTHOR);
-                String author = scanner.next();
-                view.displayBooks(library.getBooksByAuthor(author));
+                view.displayBooks(library.getBooksByAuthor(scanner.nextLine()));
                 break;
             case "2":
+                scanner.nextLine();
                 view.printMessage(TextConstants.ENTER_PUBLISHING_HOUSE);
-                view.displayBooks(library.getBooksByPublisher(scanner.next()));
+                view.displayBooks(library.getBooksByPublisher(scanner.nextLine()));
                 break;
             case "3":
                 view.printMessage(TextConstants.ENTER_YEAR);

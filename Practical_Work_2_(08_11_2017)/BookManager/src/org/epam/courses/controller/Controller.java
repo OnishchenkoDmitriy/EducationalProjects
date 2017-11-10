@@ -18,7 +18,7 @@ public class Controller {
 
     public void processUser() {
         library.putRandomBooksToLibrary();
-        userMenu.RunUserMenu();
+        userMenu.runUserMenu();
     }
 
 }
