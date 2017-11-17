@@ -1,7 +1,7 @@
 package org.epam.courses.controller;
 
-import org.epam.courses.model.Book;
-import org.epam.courses.model.Library;
+import org.epam.courses.model.entity.Book;
+import org.epam.courses.model.entity.Library;
 import org.epam.courses.view.TextConstants;
 import org.epam.courses.view.View;
 
@@ -24,7 +24,7 @@ public class UserMenu {
 
         while (!isExit){
             view.printMessage(TextConstants.WHAT_TO_DO);
-            switch (scanner.next()){
+            switch (scanner.nextLine()){
                 case "1":
                     showMenu();
                     break;
@@ -46,30 +46,30 @@ public class UserMenu {
 
     private void showMenu(){
         view.printMessage(TextConstants.BOOKS_IN_LIBRARY);
-        view.displayBooks(library.getAllBooks());
+        view.displayElementsInArray(library.getAllBooks());
     }
 
     private void sortMenu(Scanner scanner) {
         view.printMessage(TextConstants.PARAMETER_FOR_SORT);
-        switch (scanner.next()) {
+        switch (scanner.nextLine()) {
             case "1":
                 library.sortBy(Book.NameComparator);
-                view.displayBooks(library.getAllBooks());
+                view.displayElementsInArray(library.getAllBooks());
             case "2":
                 library.sortBy(Book.AuthorComparator);
-                view.displayBooks(library.getAllBooks());
+                view.displayElementsInArray(library.getAllBooks());
                 break;
             case "3":
                 library.sortBy(Book.PublishingHouseComparator);
-                view.displayBooks(library.getAllBooks());
+                view.displayElementsInArray(library.getAllBooks());
                 break;
             case "4":
                 library.sortBy(Book.PublishingYearComparator);
-                view.displayBooks(library.getAllBooks());
+                view.displayElementsInArray(library.getAllBooks());
                 break;
             case "5":
                 library.sortBy(Book.PriceComparator);
-                view.displayBooks(library.getAllBooks());
+                view.displayElementsInArray(library.getAllBooks());
                 break;
             default:
                 view.printMessage(TextConstants.WRONG_INPUT);
@@ -78,20 +78,18 @@ public class UserMenu {
 
     private void findMenu(Scanner scanner){
         view.printMessage(TextConstants.PARAMETER_FOR_FIND);
-        switch (scanner.next()) {
+        switch (scanner.nextLine()) {
             case "1":
-                scanner.nextLine();
                 view.printMessage(TextConstants.ENTER_AUTHOR);
-                view.displayBooks(library.getBooksByAuthor(scanner.nextLine()));
+                view.displayElementsInArray(library.getBooksByAuthor(scanner.nextLine()));
                 break;
             case "2":
-                scanner.nextLine();
                 view.printMessage(TextConstants.ENTER_PUBLISHING_HOUSE);
-                view.displayBooks(library.getBooksByPublisher(scanner.nextLine()));
+                view.displayElementsInArray(library.getBooksByPublisher(scanner.nextLine()));
                 break;
             case "3":
                 view.printMessage(TextConstants.ENTER_YEAR);
-                view.displayBooks(library.getBooksLaterThanYear(scanner.next()));
+                view.displayElementsInArray(library.getBooksLaterThanYear(scanner.nextLine()));
                 break;
             default:
                 view.printMessage(TextConstants.WRONG_INPUT);

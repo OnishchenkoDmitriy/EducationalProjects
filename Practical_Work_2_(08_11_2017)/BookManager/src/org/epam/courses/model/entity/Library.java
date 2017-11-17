@@ -1,4 +1,4 @@
-package org.epam.courses.model;
+package org.epam.courses.model.entity;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -61,7 +61,7 @@ public class Library {
         booksCount++;
     }
 
-    public boolean isFull(){
+    private boolean isFull(){
         return (booksCount == librarySize);
     }
 
@@ -71,13 +71,6 @@ public class Library {
             addBook(randomBookBuilder.buildRandomBook());
         }
     }
-
-    public void display(){
-        for (Book book: allBooks) {
-            System.out.println(book);
-        }
-    }
-
 
 }
 

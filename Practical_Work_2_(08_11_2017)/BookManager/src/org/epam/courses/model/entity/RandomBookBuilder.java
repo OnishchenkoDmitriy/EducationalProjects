@@ -1,4 +1,6 @@
-package org.epam.courses.model;
+package org.epam.courses.model.entity;
+
+import org.epam.courses.model.constants.*;
 
 public class RandomBookBuilder {
 

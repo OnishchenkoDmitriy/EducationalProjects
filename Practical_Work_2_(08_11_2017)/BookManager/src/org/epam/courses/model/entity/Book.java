@@ -1,4 +1,4 @@
-package org.epam.courses.model;
+package org.epam.courses.model.entity;
 
 import java.util.Comparator;
 

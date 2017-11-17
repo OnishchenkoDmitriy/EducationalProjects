@@ -1,4 +1,4 @@
-package org.epam.courses.model;
+package org.epam.courses.model.constants;
 
 public enum BookAuthors {
 
