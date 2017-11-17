@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.courses</groupId>
-    <artifactId>TestJunit2</artifactId>
+    <artifactId>TestJUnit_3</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
@@ -19,6 +19,5 @@
         </dependency>
 
     </dependencies>
-
 
 </project>
